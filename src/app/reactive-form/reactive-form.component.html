@@ -1,0 +1,13 @@
+<form [formGroup]="loginForm">
+    <div class="form-group">
+        <label>Email Id</label>
+        <input  type="email" class="form-control" placeholder="Enter Email" formControlName="email" required>
+        <span *ngIf="email.invalid">email is required</span>
+    </div>
+    
+    <br><br>
+    <label>Password</label>
+    <input type="password" class="form-control" placeholder="Enter Password" formControlName="password">
+    <br><br>
+    <button type="submit" >Login</button>
+</form>

@@ -1,0 +1,31 @@
+<p>template-form works!</p>
+<div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+        <div class = "form-group">
+            <label for="name">Name</label><br>
+            <input type="text" required #name="ngModel" pattern="[a-z]+$" name="name" class="form-control" ngModel><br>
+            <span *ngIf="name.invalid && name.touched" style="color:tomato">Please enter a valid name</span>
+        </div>
+        <pre></pre>
+        <div class = "form-group">
+            <label for="email">Email Id</label><br>
+            <input type="text" required #email="ngModel" name="email" email class="form-control" ngModel><br>
+            <span *ngIf="email.invalid && email.touched" style="color:tomato">Please enter a valid Email Id</span>
+        </div>
+        <pre></pre>
+        <div class = "form-group">
+            <label for="phoneNumber">Phone Number</label><br>
+            <input type="number" required #phoneNumber="ngModel" name="phoneNumber" class="form-control" ngModel><br>
+            <span *ngIf="phoneNumber.invalid && phoneNumber.touched" style="color:tomato">Please enter a valid Phone Number</span>
+        </div>
+        <pre></pre>
+        <div class = "form-group">
+            <label for="password">Password</label><br>
+            <input type="password" required #password="ngModel" name="password" minlength="2" class="form-control" ngModel><br>
+            <span *ngIf="password.invalid && password.touched" style="color:tomato">Please enter a valid password</span>
+        </div>
+        <pre></pre>
+        <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+    <button (click)="loginUser(loginForm.value)">Outside Button</button>
+</div>

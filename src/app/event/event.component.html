@@ -1,0 +1,12 @@
+<br><br>
+keyup <input type="text" (keyup)="myEvent('keyup event')"/>
+<br><br>
+Keyup value <input type="text" #box (keyup)="myEvent(box.value)"/>
+<br><br> 
+Keyup find the value only after enter <input #inp type="text" (keyup.enter)="event(inp.value)"/>
+<br><br> 
+Keyup find the value only after space <input #spc type="text" (keyup.space)="et(spc.value)"/>
+<br><br>
+Blur Event <input type="text" #blur (blur)="event('Blur Event')"/>
+<h2 (mouseover) = "event('mouseover event')" style="background-color: aqua;">Mouseover Event </h2>
+<h2 (mouseleave) = "event('mouseleave event')" style="background-color:aquamarine">Mouseleave Event</h2>
